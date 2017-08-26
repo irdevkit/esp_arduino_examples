@@ -23,17 +23,18 @@ void setup() {
   char *str;
 
   irArray[0] = 227; // Sending ir command
-
+  
+  // Convert string to array
   while ((str = strtok_r(irCode, ",", &irCode)) != NULL) {
     uint8_t ir = (uint8_t)atoi(str + '\0');
     irArray[idx++] = ir;
     yield();
   }
-
+  
+  // Write the array to Serial port.
   mySerial.write((uint8_t*)irArray, idx);
 
-
-  // Did success ?
+  // Read the response.
   int len = 0;
   int r;
   unsigned long timeout = 700;
@@ -53,7 +54,7 @@ void setup() {
     Serial.println("Error starting..");
   }
   else {
-    Serial.println("Press any button now..");
+    Serial.println("Success!..");
   }
 }
 
