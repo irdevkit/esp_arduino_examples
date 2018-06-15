@@ -31,6 +31,9 @@ void setup() {
     yield();
   }
   
+  // Need a small delay
+  delay(1000);
+  
   // Write the array to Serial port.
   mySerial.write((uint8_t*)irArray, idx);
 
