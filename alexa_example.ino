@@ -40,6 +40,10 @@ void turnOn(String deviceId) {
     irArray[idx++] = ir;
     yield();
   }  
+	
+  // Write the array to Serial port.
+  mySerial.write((uint8_t*)irArray, idx);
+
 }
 
 void turnOff(String deviceId) {
@@ -58,6 +62,10 @@ void turnOff(String deviceId) {
 	irArray[idx++] = ir;
 	yield();
   }
+	
+  // Write the array to Serial port.
+  mySerial.write((uint8_t*)irArray, idx);
+
 }
 
 void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
