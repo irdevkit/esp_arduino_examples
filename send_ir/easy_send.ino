@@ -3,6 +3,8 @@
 
 SoftwareSerial mySerial(D1, D2); // RX, TX
 
+// Comment above and uncomment this line if you are using Maker Model
+//SoftwareSerial mySerial(D5, D7); // RX, TX
  
 void setup() {
   // put your setup code here, to run once:
