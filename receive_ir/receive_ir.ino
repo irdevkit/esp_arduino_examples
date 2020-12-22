@@ -4,6 +4,9 @@
 // IR Controller is connected to WeMos D1, D2
 SoftwareSerial mySerial(D1, D2); // RX, TX
 
+// Comment above and uncomment this line if you are using Maker Model
+//SoftwareSerial mySerial(D5, D7); // RX, TX
+
 void start_learning_mode();
 void read_ir_signal();
 
